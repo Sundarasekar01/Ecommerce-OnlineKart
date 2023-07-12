@@ -3,7 +3,7 @@ const app = express()
 const route = require("./router/allRoute")
 const path= require("path")
 
-app.use(express.static('/public'));
+app.use(express.static('public'));
 
 
 
