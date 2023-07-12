@@ -9,3 +9,5 @@ route.get('/',con.landing)
 route.get('/login',con.login)
 route.get('/register',con.register)
 
+
+module.exports=route;
