@@ -5,6 +5,10 @@ const landing = (req,res)=>{
     res.render('landing')
 }
 
+const home = (req,res)=>{
+    res.render('home')
+}
+
 
 const signIn = (req,res)=>{
     res.render('sign-in')
@@ -58,5 +62,6 @@ module.exports={
     cart,
     productDetails,
     checkout,
-    order
+    order,
+    home
 }

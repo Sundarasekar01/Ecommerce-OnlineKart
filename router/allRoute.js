@@ -6,6 +6,7 @@ const route = express()
 const con = require("../controller/all")
 
 route.get('/',con.landing)
+route.get('/home',con.home)
 route.get('/sign-in',con.signIn)
 route.get('/sign-out',con.signOut)
 route.get('/sign-up',con.signUp)
