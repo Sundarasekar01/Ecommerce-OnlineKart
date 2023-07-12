@@ -34,6 +34,18 @@ const cart = (req,res)=>{
     res.render('cart')
 }
 
+const checkout = (req,res)=>{
+    res.render('checkout')
+}
+
+const order = (req,res)=>{
+    res.render('order')
+}
+
+
+const productDetails = (req,res)=>{
+    res.render('product-detail')
+}
 
 module.exports={
     landing,
@@ -43,5 +55,8 @@ module.exports={
     profile,
     product,
     wishlist,
-    cart
+    cart,
+    productDetails,
+    checkout,
+    order
 }

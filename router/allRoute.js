@@ -13,5 +13,9 @@ route.get('/product',con.product)
 route.get('/profile',con.profile)
 route.get('/wishlist',con.wishlist)
 route.get('/cart',con.cart)
+route.get('/product-details',con.productDetails)
+route.get('/checkout',con.checkout)
+route.get('/order',con.order)
+
 
 module.exports=route;
