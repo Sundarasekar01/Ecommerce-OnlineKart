@@ -6,16 +6,16 @@ const landing = (req,res)=>{
 }
 
 
-const login = (req,res)=>{
-    res.render('login')
+const signIn = (req,res)=>{
+    res.render('sign-in')
 }
 
-const register = (req,res)=>{
-    res.render('register')
+const signOut = (req,res)=>{
+    res.render('sign-out')
 }
 
-const logout = (req,res)=>{
-    res.render('logout')
+const signUp = (req,res)=>{
+    res.render('sign-up')
 }
 
 const profile = (req,res)=>{
@@ -49,9 +49,9 @@ const productDetails = (req,res)=>{
 
 module.exports={
     landing,
-    login,
-    register,
-    logout,
+    signIn,
+    signOut,
+    signUp,
     profile,
     product,
     wishlist,
