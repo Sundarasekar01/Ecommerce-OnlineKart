@@ -116,19 +116,43 @@
               <hr class="bg-200 mt-5 mb-4" />
               <div class="divider-content-center">or use email</div>
             </div> -->
+            <div class="">
+              <% if(typeof message !=='undefined' ){ %>
+                <span class="fs-4">
+                  
+                   <h6><span style="color: red;"><%=message %></span> </h6>
+                  
+                </span>
+                <% } %>
+            </div>
+
+            <form action="/login" method="post" onsubmit="return allChecking()">
+
             <div class="mb-3 text-start"><label class="form-label" for="email">Email address</label>
-              <div class="form-icon-container"><input class="form-control form-icon-input" id="email" type="email" placeholder="name@example.com" /><span class="fas fa-user text-900 fs--1 form-icon"></span></div>
+              <div class="form-icon-container"><input class="form-control form-icon-input "  id="email" type="email" onchange="emailValidate()" placeholder="name@example.com" /><span class="fas fa-user text-900 fs--1 form-icon"></span></div>
+              <span id="Email"></span>
             </div>
+
+
             <div class="mb-3 text-start"><label class="form-label" for="password">Password</label>
-              <div class="form-icon-container"><input class="form-control form-icon-input" id="password" type="password" placeholder="Password" /><span class="fas fa-key text-900 fs--1 form-icon"></span></div>
+              <div class="form-icon-container"><input class="form-control form-icon-input" id="password" type="password" onchange="passwordValidate()" placeholder="Password" /><span class="fas fa-key text-900 fs--1 form-icon"></span></div>
+              <span id="Password"></span>
             </div>
+
+
             <div class="row flex-between-center mb-7">
               <div class="col-auto">
                 <div class="form-check mb-0"><input class="form-check-input" id="basic-checkbox" type="checkbox" checked="checked" /><label class="form-check-label mb-0" for="basic-checkbox">Remember me</label></div>
               </div>
-              <div class="col-auto"><a class="fs--1 fw-semi-bold" href="/forgot-password">Forgot Password?</a></div>
-            </div><button class="btn btn-primary w-100 mb-3">Sign In</button>
-            <div class="text-center"><a class="fs--1 fw-bold" href="/sign-up">Create an account</a></div>
+
+              <div class="col-auto"><a class="fs--1 fw-semi-bold" href="/forgot/forgot-p">Forgot Password?</a></div>
+
+            </div><button class="btn btn-primary w-100 mb-3"  type="submit" class="btn" value="Login" onclick="emailValidate(),passwordValidate()"
+              >Sign In</button>
+
+            <div class="text-center"><a class="fs--1 fw-bold" href="/register">Create an account</a></div>
+          
+          </form>
           </div>
         </div>
       </div>
