@@ -1,13 +1,13 @@
-const User = require("../models/userModel");
-const category = require("../models/category");
-const coupon = require("../models/couponModel");
+const User = require("../models/user-model");
+const category = require("../models/category-model");
+const coupon = require("../models/coupon-model");
 const path = require('path');
-const orders = require("../models/orderModel");
-const address = require("../models/addressModel");
-const Product = require("../models/productModel");
+const orders = require("../models/order-model");
+const address = require("../models/address-model");
+const Product = require("../models/product-model");
 
 const bcrypt = require("bcrypt");
-const { findById } = require("../models/productModel");
+const { findById } = require("../models/product-model");
 const { log } = require("console");
 
 const securePassword = async (password) => {

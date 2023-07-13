@@ -1,5 +1,5 @@
-const banner = require("../models/bannerModel");
-const User = require("../models/userModel");
+const banner = require("../models/banner-model");
+const User = require("../models/user-model");
 
 
 

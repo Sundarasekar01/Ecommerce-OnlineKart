@@ -1,5 +1,5 @@
-const User = require('../models/userModel');
-const products = require("../models/productModel");
+const User = require('../models/user-model');
+const products = require("../models/product-model");
 
 
 
