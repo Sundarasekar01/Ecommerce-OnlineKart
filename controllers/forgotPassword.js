@@ -1,4 +1,4 @@
-const sms = require('../middleware/otp-validation');
+const sms = require('../middleware/smsValidation');
 const User = require('../models/user-model');
 const bcrypt = require("bcrypt");
 

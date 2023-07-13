@@ -1,6 +1,6 @@
 const User = require('../models/user-model')
 const bcrypt = require('bcrypt');
-const sms = require('../middleware/otp-validation');
+const sms = require('../middleware/smsValidation');
 const products = require("../models/product-model")
 const Category = require("../models/category-model");
 const banner = require("../models/banner-model");
@@ -22,7 +22,7 @@ const loadHome = async (req, res) => {
 const loginLoad = async (req, res) => {
     try {
 
-        res.render('login', { user: req.session.user })
+        res.render('sign-in', { user: req.session.user })
 
     }
     catch (error) {
@@ -32,7 +32,7 @@ const loginLoad = async (req, res) => {
 const loadRegister = async (req, res) => {
     try {
 
-        res.render('register', { user: req.session.use })
+        res.render('sign-up', { user: req.session.use })
 
     }
     catch (error) {
@@ -46,7 +46,7 @@ const loadOtp = async (req, res) => {
     const verify = await User.findOne({ $or: [{ mobile: req.body.mno }, { email: req.body.email }] });
     if (verify) {
         console.log(verify);
-        res.render('register', { user: req.session.user, message: "user already exists!" })
+        res.render('sign-up', { user: req.session.user, message: "user already exists!" })
     } else {
         const spassword = await bcrypt.hash(req.body.password, 10);
         user = new User({
@@ -56,18 +56,18 @@ const loadOtp = async (req, res) => {
             password: spassword,
             is_admin: 0,
         });
-        // newOtp = 1234;
+        newOtp = 1234;
 
-        newOtp = sms.sendMessage(req.body.mno, res);
+        // newOtp = sms.sendMessage(req.body.mno, res);
         console.log(newOtp);
-        res.render("otpPage", { otp: newOtp, mobno: req.body.mno })
+        res.render("otp", { otp: newOtp, mobno: req.body.mno })
     }
 }
 
 const againOtp = async (req, res) => {
     try {
-        // newOtp = 1234;
-        newOtp = sms.sendMessage(req.body.phonenumber, res);
+        newOtp = 1234;
+        // newOtp = sms.sendMessage(req.body.phonenumber, res);
         console.log(newOtp);
         res.send({ newOtp });
     } catch (error) {
@@ -83,15 +83,15 @@ const verifyOtp = async (req, res) => {
         if (req.body.sendotp == req.body.otp) {
             const userData = await user.save();
             if (userData) {
-                res.render('register', { user: req.session.user, message: "registered successfully" })
+                res.render('sign-up', { user: req.session.user, message: "registered successfully" })
             }
             else {
-                res.render('register', { user: req.session.user, message: "registration failed!!" })
+                res.render('sign-up', { user: req.session.user, message: "registration failed!!" })
             }
         } else {
 
             console.log("otp not match");
-            res.render('register', { user: req.session.user, message: "incorrect otp" })
+            res.render('sign-up', { user: req.session.user, message: "incorrect otp" })
         }
 
     } catch (error) {
@@ -120,17 +120,17 @@ const verifyLogin = async (req, res) => {
                     console.log(newOtp);
                     res.render('twoFactor', { otp: newOtp, userData: userData });
                 } else {
-                    res.render('login', { message: 'you are blocked by administrator', user: req.session.user })
+                    res.render('sign-in', { message: 'you are blocked by administrator', user: req.session.user })
 
                 }
             }
 
             else {
-                res.render('login', { message: 'email and password are incorrect', user: req.session.user })
+                res.render('sign-in', { message: 'email and password are incorrect', user: req.session.user })
             }
         }
         else {
-            res.render('login', { message: 'email and password are incorrect', user: req.session.user })
+            res.render('sign-in', { message: 'email and password are incorrect', user: req.session.user })
         }
 
 
@@ -155,7 +155,7 @@ const twoFactor = async (req, res) => {
             res.render('home', { user: req.session.user, product: product, banner: banners });
         }
         else {
-            res.render('login', { message: "incorrect otp!", user: req.session.user })
+            res.render('sign-in', { message: "incorrect otp!", user: req.session.user })
         }
     } catch (error) {
         console.log(error.message);
@@ -181,7 +181,7 @@ const loadDetails = async (req, res) => {
         const id = req.query.id;
         const details = await products.findOne({ _id: id })
         const product = await products.find({ category: details.category });
-        res.render("details", { user: req.session.user, detail: details, related: product, message: "" });
+        res.render("product-detail", { user: req.session.user, detail: details, related: product, message: "" });
     } catch (error) {
         console.log(error.message);
     }
@@ -239,7 +239,7 @@ const loadShop = async (req, res) => {
         if (ajax) {
             res.json({ products: productData, pageCount, page })
         } else {
-            res.render('shop', { user: session, product: productData, category: categoryData, val: search, selected: category, order: sort, limit: limit, pageCount, page })
+            res.render('products', { user: session, product: productData, category: categoryData, val: search, selected: category, order: sort, limit: limit, pageCount, page })
         }
     } catch (error) {
         console.log(error.message);
@@ -367,7 +367,7 @@ const editAddress = async (req, res) => {
     try {
         const id = req.query.id;
         const addres = await address.findOne({ _id: id })
-        res.render("editaddress", { user: req.session.user, address: addres });
+        res.render("edit-address", { user: req.session.user, address: addres });
     } catch (error) {
         console.log(error.message);
     }
@@ -399,7 +399,7 @@ const editUser = async (req, res) => {
     try {
         const currentUser = req.session.user_id;
         const findUser = await User.findOne({ _id: currentUser });
-        res.render("editUser", { user: findUser });
+        res.render("edit-user", { user: findUser });
 
     } catch (error) {
         console.log(error.message);
@@ -466,7 +466,7 @@ const placeOrder = async (req, res) => {
                 }
             }
             await User.updateOne({ _id: req.session.user_id }, { $unset: { cart: 1 } })
-            res.render("orderSuccess", { user: req.session.user })
+            res.render("order-success", { user: req.session.user })
 
         } else if (req.body.payment == "wallet") {
             console.log("123");
@@ -494,7 +494,7 @@ const placeOrder = async (req, res) => {
                     }
                 }
 
-                res.render("orderSuccess", { user: req.session.user })
+                res.render("order-success", { user: req.session.user })
             } else {
                 var instance = new RazorPay({
                     key_id: process.env.key_id,
@@ -542,7 +542,7 @@ const placeOrder = async (req, res) => {
                     }
                 }
             }
-            res.render("confirmPayment", {
+            res.render("confirm-payment", {
                 userId: req.session.user_id,
                 order_id: razorpayOrder.id,
                 total: req.body.amount,
@@ -571,7 +571,7 @@ const loadOrderSuccess = async (req, res) => {
         await Norder.save();
         await User.updateOne({ _id: req.session.user_id }, { $unset: { cart: 1 } })
         const data = req.session.totalWallet
-        res.render("orderSuccess", { user: req.session.user })
+        res.render("order-success", { user: req.session.user })
 
     } catch (error) {
         console.log(error.message);
@@ -581,7 +581,7 @@ const editCheckoutAddress = async (req, res) => {
     try {
         const id = req.query.id;
         const addressData = await address.findById({ _id: id });
-        res.render("editCheckoutAddress", { user: req.session.user, address: addressData });
+        res.render("edit-checkout-address", { user: req.session.user, address: addressData });
     } catch (error) {
         console.log(error.message);
     }
@@ -627,7 +627,7 @@ const viewOrderDetails = async (req, res) => {
         const addres = await address.findById({ _id: users })
         console.log(addres);
         await orderDetails.populate('products.item.productId')
-        res.render("viewOrderDetails", { user: req.session.user, orders: orderDetails });
+        res.render("order-details", { user: req.session.user, orders: orderDetails });
     } catch (error) {
 
     }
@@ -706,7 +706,7 @@ const writeReview = async (req, res) => {
         console.log(userData);
         const orderData = await order.findById({ _id: orderId }).populate("products.item.productId");
         console.log("hi"+orderData);
-        res.render("writeReview", { user: req.session.user, userDatas: userData, orderDatas: orderData });
+        res.render("review", { user: req.session.user, userDatas: userData, orderDatas: orderData });
     } catch (error) {
         console.log(error.message);
     }
@@ -733,7 +733,7 @@ const submitReview = async (req, res) => {
 const loadcoupons = async(req,res)=>{
     try{
         const coupondata = await coupon.find()
-        res.render("couponDisplay",coupondata)
+        res.render("coupon-show",coupondata)
     }catch(error){
         console.log(error.message);
     }
