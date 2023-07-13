@@ -78,15 +78,23 @@
               </div>
             </div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item border-bottom border-bottom-lg-0"><a class="nav-link lh-1 py-0 fs--1 fw-bold py-3 active" aria-current="page" href="#">Home</a></li>
-              <li class="nav-item border-bottom border-bottom-lg-0"><a class="nav-link lh-1 py-0 fs--1 fw-bold py-3" href="#feature">Features</a></li>
-              <li class="nav-item border-bottom border-bottom-lg-0"><a class="nav-link lh-1 py-0 fs--1 fw-bold py-3" href="#blog">Blog</a></li>
-              <li class="nav-item"><a class="nav-link lh-1 py-0 fs--1 fw-bold py-3" href="#team">Team</a></li>
+              <li class="nav-item border-bottom border-bottom-lg-0"><a class="nav-link lh-1 py-0 fs--1 fw-bold py-3 active" aria-current="page" href="/home">Home</a></li>
+              <li class="nav-item border-bottom border-bottom-lg-0"><a class="nav-link lh-1 py-0 fs--1 fw-bold py-3" href="/loadShop">Shop</a></li>
+              <li class="nav-item border-bottom border-bottom-lg-0"><a class="nav-link lh-1 py-0 fs--1 fw-bold py-3" href="loadWishlist">Wishlist</a></li>
+              <li class="nav-item"><a class="nav-link lh-1 py-0 fs--1 fw-bold py-3" href="loadCart">Cart</a></li>
             </ul>
             <div class="d-grid d-lg-flex align-items-center">
               <div class="nav-item d-flex align-items-center d-none d-lg-block pe-2">
                 <div class="theme-control-toggle fa-icon-wait px-2"><input class="form-check-input ms-0 theme-control-toggle-input" type="checkbox" data-theme-control="phoenixTheme" value="dark" id="themeControlToggle" /><label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="moon"></span></label><label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="sun"></span></label></div>
-              </div><a class="text-700 hover-text-1100 px-2 d-none d-lg-inline lh-sm" href="#" data-bs-toggle="modal" data-bs-target="#searchBoxModal"><span data-feather="search" style="height: 20px; width: 20px;"></span></a><a class="btn btn-link text-900 order-1 order-lg-0 ps-4 me-lg-2" href="/sign-in">Sign in</a><a class="btn btn-phoenix-primary order-0" href="/sign-up"><span class="fw-bold">Sign Up</span></a>
+              
+
+                <% if (user) { %>
+              </div><a class="text-700 hover-text-1100 px-2 d-none d-lg-inline lh-sm" href="#" data-bs-toggle="modal" data-bs-target="#searchBoxModal"><span data-feather="search" style="height: 20px; width: 20px;"></span></a><a class="btn btn-link text-900 order-1 order-lg-0 ps-4 me-lg-2" href="/userProfile">Profile</a><a class="btn btn-phoenix-primary order-0" href="/logout"><span class="fw-bold">Sign Out</span></a>
+
+              <% } else { %>
+            </div><a class="text-700 hover-text-1100 px-2 d-none d-lg-inline lh-sm" href="#" data-bs-toggle="modal" data-bs-target="#searchBoxModal"><span data-feather="search" style="height: 20px; width: 20px;"></span></a><a class="btn btn-link text-900 order-1 order-lg-0 ps-4 me-lg-2" href="/login">Sign in</a><a class="btn btn-phoenix-primary order-0" href="/register"><span class="fw-bold">Sign Up</span></a>
+            <% }%>
+
             </div>
           </div>
         </nav>
@@ -212,7 +220,7 @@
       </div>
       <br>
 
-      <nav class="ecommerce-navbar navbar-expand navbar-light bg-white justify-content-between">
+      <!-- <nav class="ecommerce-navbar navbar-expand navbar-light bg-white justify-content-between">
         <div class="container-small d-flex flex-between-center" data-navbar="data-navbar">
           <div class="dropdown"><button class="btn text-900 ps-0 pe-5 text-nowrap dropdown-toggle dropdown-caret-none" data-category-btn="data-category-btn" data-bs-toggle="dropdown"><span class="fas fa-bars me-2"></span>Category</button>
             <div class="dropdown-menu border py-0 category-dropdown-menu">
@@ -293,8 +301,7 @@
             </li>
           </ul>
         </div>
-      </nav>
+      </nav> -->
       <div class="ecommerce-homepage pt-5 mb-9">
 
-      <br>
       
