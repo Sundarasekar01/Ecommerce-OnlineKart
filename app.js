@@ -1,22 +1,51 @@
+const mongoose = require("mongoose")
+require('dotenv').config();
+mongoose.set('strictQuery', false);
 const express = require("express")
+const nocache = require('nocache');
+const mongoSanitize = require('express-mongo-sanitize');
 const app = express()
-const route = require("./router/allRoute")
-const path= require("path")
+
+DB = process.env.DBURL
+mongoose.connect(DB)
+
+const connection = mongoose.connection;
+
+connection.once('open', () => {
+  console.log('connection is successfull');
+})
+
+app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
+app.use(express.json());
 
+app.use(express.urlencoded({ extended: true }));
 
+app.use(nocache());
 
+app.use(mongoSanitize());
 
+const userRoute = require("./routes/userRoute");
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
+app.use("/", userRoute);
 
+const adminRoute = require("./routes/adminRoute");
 
+app.use("/admin", adminRoute);
 
-app.use("/", route)
+const forgotPassword = require("./routes/forgotPassword");
 
-app.listen(4000, ()=>{
-    console.log('server started at 4000')
+app.use("/forgot", forgotPassword);
+
+app.all("*", (req, res) => {
+  res.render("error")
 })
+
+app.listen(2308, function () {
+  console.log("server is running at 2308");
+});
+
+
+
