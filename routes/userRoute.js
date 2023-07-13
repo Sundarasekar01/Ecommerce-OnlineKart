@@ -15,7 +15,7 @@ user_route.use(
   })
 );
 
-user_route.set("views", "./views/users");
+user_route.set("views", "./views/user-side");
 
 user_route.get("/",userController.loadHome);
 

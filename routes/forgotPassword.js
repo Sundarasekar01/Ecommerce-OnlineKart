@@ -2,7 +2,7 @@ const express = require("express");
 const forgot_Password = express();
 const forgotP=require("../controllers/forgotPassword");
 
-forgot_Password.set('views', './views/users');
+forgot_Password.set('views', './views/user-side');
 
 forgot_Password.use(express.static('public'));
 

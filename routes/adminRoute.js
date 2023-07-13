@@ -18,7 +18,7 @@ admin_route.use(session({
 
 
   
-admin_route.set('views', './views/admin');
+admin_route.set('views', './views/admin-side');
 
 admin_route.use(express.static('public'));
 
