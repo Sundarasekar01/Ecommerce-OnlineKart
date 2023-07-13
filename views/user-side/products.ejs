@@ -1,554 +1,349 @@
-<%- include('../partials/header.ejs'); %>
+<%- include('../partials/header.ejs') %>
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="pt-5 pb-9">
-        <div class="product-filter-container"><button class="btn btn-sm btn-phoenix-secondary text-700 mb-5 d-lg-none" data-phoenix-toggle="offcanvas" data-phoenix-target="#productFilterColumn"> <span class="fa-solid fa-filter me-2"></span>Filter</button>
-          <div class="row">
-            <div class="col-lg-3 col-xxl-2 ps-2 ps-xxl-3">
-              <div class="product-filter-offcanvas bg-soft scrollbar phoenix-offcanvas phoenix-offcanvas-fixed" id="productFilterColumn">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h3 class="mb-0">Filters</h3><button class="btn d-lg-none p-0" data-phoenix-dismiss="offcanvas"><span class="uil uil-times fs-0"></span></button>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseAvailability" role="button" aria-expanded="true" aria-controls="collapseAvailability">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Availability</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseAvailability">
-                  <div class="mb-2">
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="inStockInput" type="checkbox" name="color" checked><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="inStockInput">In stock</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="preBookInput" type="checkbox" name="color"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="preBookInput">Pre-book</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="outOfStockInput" type="checkbox" name="color"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="outOfStockInput">Out of stock</label></div>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseColorFamily" role="button" aria-expanded="true" aria-controls="collapseColorFamily">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Color family</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseColorFamily">
-                  <div class="mb-2">
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="flexCheckBlack" type="checkbox" name="color" checked><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="flexCheckBlack">Black</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="flexCheckBlue" type="checkbox" name="color"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="flexCheckBlue">Blue</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="flexCheckRed" type="checkbox" name="color"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="flexCheckRed">Red</label></div>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseBrands" role="button" aria-expanded="true" aria-controls="collapseBrands">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Brands</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseBrands">
-                  <div class="mb-2">
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="flexCheckBlackberry" type="checkbox" name="brands" checked><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="flexCheckBlackberry">Blackberry
-                      </label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="flexCheckApple" type="checkbox" name="brands"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="flexCheckApple">Apple
-                      </label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="flexCheckNokia" type="checkbox" name="brands"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="flexCheckNokia">Nokia
-                      </label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="flexCheckSony" type="checkbox" name="brands"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="flexCheckSony">Sony
-                      </label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="flexCheckLG" type="checkbox" name="brands"><label class="form-check-label d-block lh-sm fs-0 text-900 mb-0 fw-normal" for="flexCheckLG">LG
-                      </label></div>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapsePriceRange" role="button" aria-expanded="true" aria-controls="collapsePriceRange">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Price range</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapsePriceRange">
-                  <div class="d-flex justify-content-between mb-3">
-                    <div class="input-group me-2"><input class="form-control" type="text" aria-label="First name" placeholder="Min"><input class="form-control" type="text" aria-label="Last name" placeholder="Max"></div><button class="btn btn-phoenix-primary border-300 px-3" type="button">Go</button>
-                  </div>
-                </div><a class="btn px-0 y-4 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseRating" role="button" aria-expanded="true" aria-controls="collapseRating">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Rating</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseRating">
-                  <div class="d-flex align-items-center mb-1"><input class="form-check-input me-3" id="flexRadio1" type="radio" name="flexRadio"><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span></div>
-                  <div class="d-flex align-items-center mb-1"><input class="form-check-input me-3" id="flexRadio2" type="radio" name="flexRadio"><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span>
-                    <p class="ms-1 mb-0">&amp; above</p>
-                  </div>
-                  <div class="d-flex align-items-center mb-1"><input class="form-check-input me-3" id="flexRadio3" type="radio" name="flexRadio"><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span>
-                    <p class="ms-1 mb-0">&amp; above </p>
-                  </div>
-                  <div class="d-flex align-items-center mb-1"><input class="form-check-input me-3" id="flexRadio4" type="radio" name="flexRadio"><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span>
-                    <p class="ms-1 mb-0">&amp; above</p>
-                  </div>
-                  <div class="d-flex align-items-center mb-3"><input class="form-check-input me-3" id="flexRadio5" type="radio" name="flexRadio"><span class="fa fa-star text-warning fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span><span class="fa-regular fa-star text-warning-300 fs--1 me-1"></span>
-                    <p class="ms-1 mb-0">&amp; above </p>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseDisplayType" role="button" aria-expanded="true" aria-controls="collapseDisplayType">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Display type</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseDisplayType">
-                  <div class="mb-2">
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="lcdInput" type="checkbox" name="displayType" checked><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="lcdInput">LCD</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="ipsInput" type="checkbox" name="displayType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="ipsInput">IPS</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="oledInput" type="checkbox" name="displayType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="oledInput">OLED</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="amoledInput" type="checkbox" name="displayType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="amoledInput">AMOLED</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="retinaInput" type="checkbox" name="displayType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="retinaInput">Retina</label></div>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseCondition" role="button" aria-expanded="true" aria-controls="collapseCondition">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Condition</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseCondition">
-                  <div class="mb-2">
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="newInput" type="checkbox" name="condition" checked><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="newInput">New</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="usedInput" type="checkbox" name="condition"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="usedInput">Used</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="refurbrishedInput" type="checkbox" name="condition"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="refurbrishedInput">Refurbrished</label></div>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseDelivery" role="button" aria-expanded="true" aria-controls="collapseDelivery">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Delivery</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseDelivery">
-                  <div class="mb-2">
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="freeShippingInput" type="checkbox" name="delivery" checked><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="freeShippingInput">Free Shipping</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="oneDayShippingInput" type="checkbox" name="delivery"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="oneDayShippingInput">One-day Shipping</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="codInput" type="checkbox" name="delivery"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="codInput">Cash on Delivery</label></div>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseCampaign" role="button" aria-expanded="true" aria-controls="collapseCampaign">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Campaign</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseCampaign">
-                  <div class="mb-2">
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="summerSaleInput" type="checkbox" name="campaign"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="summerSaleInput">Summer Sale</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="marchMadnessInput" type="checkbox" name="campaign"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="marchMadnessInput">March Madness</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="flashSaleInput" type="checkbox" name="campaign"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="flashSaleInput">Flash Sale</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="bogoBlastInput" type="checkbox" name="campaign"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="bogoBlastInput">BOGO Blast</label></div>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseWarranty" role="button" aria-expanded="true" aria-controls="collapseWarranty">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Warranty</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseWarranty">
-                  <div class="mb-2">
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="threeMonthInput" type="checkbox" name="warranty"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="threeMonthInput">3 months</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="sixMonthInput" type="checkbox" name="warranty"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="sixMonthInput">6 months</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="oneYearInput" type="checkbox" name="warranty"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="oneYearInput">1 year</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="twoYearsInput" type="checkbox" name="warranty"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="twoYearsInput">2 years</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="threeYearsInput" type="checkbox" name="warranty"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="threeYearsInput">3 years</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="fiveYearsInput" type="checkbox" name="warranty"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="fiveYearsInput">5 years</label></div>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseWarrantyType" role="button" aria-expanded="true" aria-controls="collapseWarrantyType">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Warranty Type</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseWarrantyType">
-                  <div class="mb-2">
-                    <div class="form-check mb-0x"><input class="form-check-input mt-0" id="replacementInput" type="checkbox" name="warrantyType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="replacementInput">Replacement</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="serviceInput" type="checkbox" name="warrantyType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="serviceInput">Service</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="partialCoveregeInput" type="checkbox" name="warrantyType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="partialCoveregeInput">Partial Coverage</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="appleCareInput" type="checkbox" name="warrantyType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="appleCareInput">Apple Care</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="moneyBackInput" type="checkbox" name="warrantyType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="moneyBackInput">Money back</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="extendableInput" type="checkbox" name="warrantyType"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="extendableInput">Extendable</label></div>
-                  </div>
-                </div><a class="btn px-0 d-block collapse-indicator" data-bs-toggle="collapse" href="#collapseCertification" role="button" aria-expanded="true" aria-controls="collapseCertification">
-                  <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="fs-0 text-1000">Certification</div><span class="fa-solid fa-angle-down toggle-icon text-500"></span>
-                  </div>
-                </a>
-                <div class="collapse show" id="collapseCertification">
-                  <div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="rohsInput" type="checkbox" name="certification"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="rohsInput">RoHS</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="fccInput" type="checkbox" name="certification"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="fccInput">FCC</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="conflictInput" type="checkbox" name="certification"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="conflictInput">Conflict Free</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="isoOneInput" type="checkbox" name="certification"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="isoOneInput">ISO 9001:2015</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="isoTwoInput" type="checkbox" name="certification"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="isoTwoInput">ISO 27001:2013</label></div>
-                    <div class="form-check mb-0"><input class="form-check-input mt-0" id="isoThreeInput" type="checkbox" name="certification"><label class="form-check-label d-block lh-sm fs-0 text-900 fw-normal mb-0" for="isoThreeInput">IEC 61000-4-2</label></div>
-                  </div>
-                </div>
-              </div>
-              <div class="phoenix-offcanvas-backdrop d-lg-none" data-phoenix-backdrop></div>
-            </div>
-            <div class="col-lg-9 col-xxl-10">
-              <div class="row gx-3 gy-6 mb-8">
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/6.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">PlayStation 5 DualSense Wireless Controller</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(67 people rated)</span></p>
-                        </div>
-                        <div>
-                          <p class="fs--1 text-700 mb-2">dbrand skin available</p>
-                          <div class="d-flex align-items-center mb-1">
-                            <p class="me-2 text-900 text-decoration-line-through mb-0">$125.00</p>
-                            <h3 class="text-1100 mb-0">$89.00</h3>
-                          </div>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">2 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/1.png" alt="" /><span class="badge bg-success fs--2 product-verified-badge">Verified<span class="fas fa-check ms-1"></span></span></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">Fitbit Sense Advanced Smartwatch with Tools for Heart Health, Stress Management &amp;amp; Skin Temperature ...</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(74 people rated)</span></p>
-                        </div>
-                        <div>
-                          <div class="d-flex align-items-center mb-1">
-                            <p class="me-2 text-900 text-decoration-line-through mb-0">$49.99</p>
-                            <h3 class="text-1100 mb-0">$34.99</h3>
-                          </div>
-                          <p class="text-success fw-bold fs--1 lh-1 mb-0">Deal time ends in days</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/2.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">iPhone 13 pro max-Pacific Blue, 128GB storage</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(33 people rated)</span></p>
-                        </div>
-                        <div>
-                          <p class="fs--1 text-1000 fw-bold mb-2">Stock limited</p>
-                          <div class="d-flex align-items-center mb-1">
-                            <p class="me-2 text-900 text-decoration-line-through mb-0">$899.99</p>
-                            <h3 class="text-1100 mb-0">$850.99</h3>
-                          </div>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">5 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/3.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">Apple MacBook Pro 13 inch-M1-8/256GB-Space Gray</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(97 people rated)</span></p>
-                        </div>
-                        <div>
-                          <p class="fs--1 text-1000 fw-bold mb-2">Apple care included</p>
-                          <div class="d-flex align-items-center mb-1">
-                            <p class="me-2 text-900 text-decoration-line-through mb-0">$12.00</p>
-                            <h3 class="text-1100 mb-0">$11.00</h3>
-                          </div>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">2 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/4.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">Apple iMac 24&quot; 4K Retina Display M1 8 Core CPU, 7 Core GPU, 256GB SSD, Green (MJV83ZP/A) 2021</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(134 people rated)</span></p>
-                        </div>
-                        <div>
-                          <p class="fs--1 text-1000 fw-bold mb-2">Exchange with kidney</p>
-                          <div class="d-flex align-items-center mb-1">
-                            <p class="me-2 text-900 text-decoration-line-through mb-0">$1499.00</p>
-                            <h3 class="text-1100 mb-0">$1399.00</h3>
-                          </div>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">7 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/5.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">Razer Kraken v3 x Wired 7.1 Surroung Sound Gaming headset</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(59 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$59.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">2 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/7.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">2021 Apple 12.9-inch iPad Pro (Wi‑Fi, 128GB) - Space Gray</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(13 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$799.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">2 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/12.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">HORI Racing Wheel Apex for PlayStation 4/3, and PC</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(64 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$299.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">1 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove from wishlist"><span class="fas fa-heart"></span></button><img class="img-fluid" src="../../../assets/img/products/1.png" alt="" /><span class="badge bg-success fs--2 product-verified-badge">Verified<span class="fas fa-check ms-1"></span></span></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">Amazfit T-Rex Pro Smart Watch with GPS, Outdoor Fitness Watch for Men, Military Standard Certified</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(32 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$20.00</h3>
-                          <p class="text-success fw-bold fs--1 lh-1 mb-0">Deal time ends in 24 hours</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/16.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">Apple AirPods Pro</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(39 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$59.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">3 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/10.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">Apple Magic Mouse (Wireless, Rechargable) - Silver</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(6 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$89.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">2 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/25.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">RESPAWN 200 Racing Style Gaming Chair, in Gray RSP 200 GRY</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(8 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$499.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">2 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/27.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">LEVOIT Humidifiers for Bedroom Large Room 6L Warm and Cool Mist for...</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(3 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$299.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">3 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/26.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">NETGEAR Nighthawk Pro Gaming XR500 Wi-Fi Router with 4 Ethernet Ports...</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(8 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$49.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">4 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/18.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">Rachael Ray Cucina Bakeware Set Includes Nonstick Bread Baking Cookie Sheet...</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(1 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$29.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">3 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/17.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">Xbox Series S</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(6 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$19.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">2 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/24.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">FURINNO Computer Writing Desk, Walnut</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="text-500 fw-semi-bold ms-1">(8 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$199.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">2 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
-                  <div class="product-card-container h-100">
-                    <div class="position-relative text-decoration-none product-card h-100">
-                      <div class="d-flex flex-column justify-content-between h-100">
-                        <div>
-                          <div class="border border-1 rounded-3 position-relative mb-3"><button class="btn rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container btn-outline-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to wishlist"><span class="fas fa-heart d-block-hover"></span><span class="far fa-heart d-none-hover"></span></button><img class="img-fluid" src="../../../assets/img/products/20.png" alt="" /></div><a class="stretched-link" href="../../../apps/e-commerce/landing/product-details.html">
-                            <h6 class="mb-2 lh-sm line-clamp-3 product-name">ASUS TUF Gaming F15 Gaming Laptop</h6>
-                          </a>
-                          <p class="fs--1"><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa fa-star text-warning"></span><span class="fa-regular fa-star text-warning-300"></span><span class="text-500 fw-semi-bold ms-1">(3 people rated)</span></p>
-                        </div>
-                        <div>
-                          <h3 class="text-1100">$150.00</h3>
-                          <p class="text-700 fw-semi-bold fs--1 lh-1 mb-0">2 colors</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex justify-content-end">
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination mb-0">
-                    <li class="page-item">
-                      <a class="page-link" href="#">
-                        <span class="fas fa-chevron-left"> </span>
-                      </a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item active" aria-current="page">
-                      <a class="page-link" href="#">4</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">5</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#"> <span class="fas fa-chevron-right"></span></a>
-                    </li>
-                  </ul>
+
+
+    <!-- Navbar Start -->
+
+    <style>
+        /* Style for the label */
+        .label {
+            text-align: center;
+            background-color: white;
+            padding: 10px;
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: bold;
+            width: 35px;
+        }
+
+        /* Style for the radio button */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Style for the label when the radio button is checked */
+        input[type="radio"]:checked+label {
+            color: #2196F3;
+        }
+
+
+
+        /* Style for the radio button circle */
+        input[type="radio"]+label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+
+        /* Style for the radio button circle when checked */
+        input[type="radio"]:checked+label::before {
+            background-color: #2196F3;
+            border-color: #2196F3;
+        }
+
+
+
+        /* Accessibility styles for the radio button circle */
+        input[type="radio"]+label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+
+        input[type="radio"]+label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+
+        input[type="radio"]+label::before:focus,
+        input[type="radio"]+label::before:hover {
+            outline: none;
+            border-color: #2196F3;
+        }
+    </style>
+
+    
+    <!-- Breadcrumb Start -->
+    <br>
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="/home">Home</a>
+                    <a class="breadcrumb-item text-dark" href="/loadShop">Shop</a>
+                    <span class="breadcrumb-item active">Shop List</span>
                 </nav>
-              </div>
             </div>
-          </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
+        </div>
+    </div>
 
-      <%- include('../partials/footer.ejs'); %>
+    <!-- Breadcrumb End -->
+
+
+    <!-- Shop Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <!-- Shop Sidebar Start -->
+            <div class="col-lg-3 col-md-4">
+                <!-- Price Start -->
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-white pr-3">Filter
+                        by Category</span></h5>
+                <div class="bg-light p-4 mb-30">
+                    <form action="/loadShop">
+
+                        <!-- <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="category" id="flexRadioDefault2" value="" <%if(selected==''){%>checked<%}%>  onclick="submit()">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              All
+                            </label>
+                          </div>
+                    </div> -->
+
+                        <% for(i=0;i<category.length;i++){%>
+                            <div
+                                class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                                <div class="form-check">
+                                    <input class="category form-check-input" type="checkbox" value="<%-i%>"
+                                        name="category" onchange="update()" <% for(j=0; j< selected.length; j++) {
+                                        if(selected[j]==i) { %>checked<%}}%>/>
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            <%-category[i].name %>
+                                        </label>
+                                </div>
+                            </div>
+                            <%}%>
+                </div>
+                <!-- Price End -->
+
+                <!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5> -->
+                <div class="bg p-4 mb-30">
+                    
+                </div>
+            </div>
+            <!-- Shop Sidebar End -->
+
+
+            <!-- Shop Product Start -->
+            <div class="col-lg-9 col-md-8">
+                <div class="row pb-3">
+                    <div class="col-12 pb-1">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div>
+                                <button class="btn btn-sm btn-light"><i class="fa fa-th-large"></i></button>
+                                <button class="btn btn-sm btn-light ml-2"><i class="fa fa-bars"></i></button>
+                            </div>
+                            <div class="ml-2"><select class="select-box bg-white select-box--transparent-b-2"
+                                    name="limit" id="limit" onchange="update()">
+                                    <option value="12" <% if(limit==12) { %>selected<%}%>>Show: All</option>
+                                    <option value="3" <% if(limit==3) { %>selected<%}%>>Show: 3</option>
+                                    <option value="6" <% if(limit==6) { %>selected<%}%>>Show: 6</option>
+                                    <option value="9" <% if(limit==9) { %>selected<%}%>>Show: 9</option>
+                                </select></div>
+                            <div class="ml-2">
+                                <select class="select-box select-box--transparent-b-2" name="sort" id="sort"
+                                    onchange="update()">
+                                    <option value="0" <% if(order==0) { %>selected<%}%> >Sort By: Latest Arrivals
+                                    </option>
+                                    <option value="1" <% if(order==1) { %>selected<%}%> >Sort By: Lowest Price</option>
+                                    <option value="-1" <% if(order==-1) { %>selected<%}%> >Sort By: Highest Price
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row pb-3" id="products">
+                    <% for(i=0;i<product.length;i++){ %>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="/view-details?id=<%=product[i]._id%>">
+                            <img src="/uploads/<%=product[i].image[0]%>" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">Rs <%=product[i].price%></li>
+                            </ul>
+                            <a href="/view-details?id=<%=product[i]._id%>" class="h2 text-decoration-none text-dark"><%=product[i].name%></a>
+                            <p class="card-text">
+                                <%=product[i].description%>
+                            </p>
+                            
+                    
+                                                       
+                        </div>
+                    </div>
+                </div>
+
+                <%}%>
+
+                
+            </div>
+
+
+
+
+
+                
+
+                <div class="row pb-3">
+                    <div class="col-12" id="pgnt" style="display: block;">
+                        <nav>
+                            <ul class="pagination justify-content-center">
+                                <% for(i=0;i<pageCount;i++){%>
+                                    <li class="page-item " id="<%-i%>"><a class="page-link"
+                                            onclick="updatePage('<%-i%>')"><%-i+1%></a></li>
+                                    <%}%>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- Shop Product End --></form>
+        </div>
+    </div>
+    <!-- Shop End -->
+
+
+
+
+
+
+
+    <script>
+        console.log('itrufysvdmhg');
+        let page = 0
+        function updatePage(pg = 0) {
+            console.log('rtjhihughg');
+            page = pg
+            console.log(page);
+            pageNo = document.getElementsByClassName('page-item')
+            for (let key of pageNo) { key.classList.remove('active') }
+            document.getElementById(page).classList.add('active')
+            update()
+        }
+        function update() {
+            console.log('litugbh');
+            var elements = document.getElementsByClassName("category");
+            var limit = document.getElementById('limit').value
+            var sort = document.getElementById('sort').value
+            var search = document.getElementById('search').value
+            var arr = '';
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].checked) {
+                    arr = [...arr, elements[i].value]
+                }
+            }
+            console.log(arr + '\n' + limit + '\n' + sort + '\n' + search + '\n' + page);
+            $.ajax({
+                url: '/loadShop',
+                type: 'GET',
+                data: { category: arr, limit: limit, sort: sort, search: search, page: page, ajax: true },
+                success: function (data) {
+                    console.log(data);
+                    if (data.pageCount == 1) {
+                        document.getElementById('pgnt').style.display = 'none';
+                    } else {
+                        document.getElementById('pgnt').style.display = 'block';
+                    }
+                    product = data.products
+                    document.getElementById('products').innerHTML = `
+    ${product.map((productItem) => `
+
+
+
+
+        <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="/view-details?id=${productItem._id}">
+                            <img src="/uploads/${productItem.image[0]}" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                <li class="text-muted text-right">Rs ${productItem.price}</li>
+                            </ul>
+                            <a href="/view-details?id=${productItem._id}" class="h2 text-decoration-none text-dark">${productItem.name}</a>
+                            <p class="card-text">
+                                ${productItem.description}
+                            </p>
+                            
+                                                        
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+    `).join('')}
+`;
+                    console.log(data.pageCount);
+                    if (data.pageCount > 1) {
+                        console.log('gte');
+                        document.getElementById('pgnt').innerHTML = `
+    <nav>
+        <ul class="pagination justify-content-center">
+            ${Array(data.pageCount).fill().map((_, index) => `
+                <li class="page-item pg" id="${index}">
+                    <a class="page-link" onclick="updatePage('${index}')">${index + 1}</a>
+                </li>
+            `).join('')}
+        </ul>
+    </nav>
+`;
+                    } else {
+                        if (data.page != 0) {
+                            updatePage()
+                        }
+                    }
+
+
+                }
+            });
+        }
+    </script>
+
+    <%- include('../partials/footer.ejs') %>
