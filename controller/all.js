@@ -23,7 +23,7 @@ const signUp = (req,res)=>{
 }
 
 const forgotPassword = (req,res)=>{
-    res.render('forget-password')
+    res.render('forgot-password')
 }
 
 
