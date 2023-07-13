@@ -3,7 +3,7 @@ const user_route = express();
 const session = require("express-session");
 const config = require("../config/config");
 const userController = require("../controllers/userController");
-const auth = require("../middleware/auth");
+const auth = require("../middleware/user-authentication");
 const cartController=require("../controllers/cartController");
 const wishlistController=require("../controllers/wishlistController");
 

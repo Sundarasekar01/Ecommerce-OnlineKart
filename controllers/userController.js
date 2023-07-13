@@ -1,12 +1,12 @@
-const User = require('../models/userModel')
+const User = require('../models/user-model')
 const bcrypt = require('bcrypt');
-const sms = require('../middleware/smsValidation');
-const products = require("../models/productModel")
-const Category = require("../models/category");
-const banner = require("../models/bannerModel");
-const address = require("../models/addressModel");
-const coupon = require("../models/couponModel");
-const order = require("../models/orderModel");
+const sms = require('../middleware/otp-validation');
+const products = require("../models/product-model")
+const Category = require("../models/category-model");
+const banner = require("../models/banner-model");
+const address = require("../models/address-model");
+const coupon = require("../models/coupon-model");
+const order = require("../models/order-model");
 const RazorPay = require("razorpay");
 require("dotenv").config();
 const loadHome = async (req, res) => {

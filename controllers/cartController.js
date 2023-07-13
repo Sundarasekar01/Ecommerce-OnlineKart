@@ -1,6 +1,6 @@
-const User = require('../models/userModel')
-const products = require("../models/productModel")
-const coupon = require("../models/couponModel");
+const User = require('../models/user-model')
+const products = require("../models/product-model")
+const coupon = require("../models/coupon-model");
 
 
 
