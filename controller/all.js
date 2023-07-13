@@ -22,6 +22,11 @@ const signUp = (req,res)=>{
     res.render('sign-up')
 }
 
+const forgotPassword = (req,res)=>{
+    res.render('forget-password')
+}
+
+
 const profile = (req,res)=>{
     res.render('profile')
 }
@@ -63,5 +68,6 @@ module.exports={
     productDetails,
     checkout,
     order,
-    home
+    home,
+    forgotPassword
 }
