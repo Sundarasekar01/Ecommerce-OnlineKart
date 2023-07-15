@@ -32,7 +32,7 @@ const loginLoad = async (req, res) => {
 const loadRegister = async (req, res) => {
     try {
 
-        res.render('sign-up', { user: req.session.use })
+        res.render('sign-up', { user: req.session.user })
 
     }
     catch (error) {
