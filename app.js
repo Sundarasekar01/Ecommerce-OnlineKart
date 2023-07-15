@@ -39,9 +39,9 @@ const forgotPassword = require("./routes/forgotPassword");
 
 app.use("/forgot", forgotPassword);
 
-app.all("*", (req, res) => {
-  res.render("error")
-})
+// app.all("*", (req, res) => {
+//   res.render("error")
+// })
 
 app.listen(2308, function () {
   console.log("server is running at 2308");

@@ -38,7 +38,7 @@ user_route.post("/againotp",userController.againOtp);
 user_route.post("/otpPage",userController.verifyOtp)
 
 
-// user_route.use(auth.isLogin);
+user_route.use(auth.isLogin);
 
 user_route.get("/home", userController.loadHome);
 
