@@ -45,10 +45,10 @@ const verifyLogin = async (req, res) => {
           res.redirect("/admin/home");
         }
       } else {
-        res.render("adminLogin", { message: " password is incorrect", user: req.session.admin_id });
+        res.render("admin-login", { message: " password is incorrect", user: req.session.admin_id });
       }
     } else {
-      res.render("adminLogin", { message: "email is incorrect", user: req.session.admin_id });
+      res.render("admin-login", { message: "email is incorrect", user: req.session.admin_id });
     }
   } catch (error) {
     console.log(error.message);
