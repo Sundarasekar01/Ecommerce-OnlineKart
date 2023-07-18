@@ -99,38 +99,32 @@
               </div> -->
 
 
-              <div class="container my-5">
-                <div class="row justify-content-center">
-                  <div class="col-md-6">
-                    <div class="card">
-                      <div class="card-header text-center">
-                        <h1 class="fw-bold mb-0"><span class="text-info">OTP</span> Verification</h1>
-                      </div>
+             
                       <div class="card-body">
                         <form id="otpForm" action="/otpPage" method="post">
                           <input id="oldotp" type="hidden" name="sendotp" value="<%-otp%>">
+                          
+                          <br>
                           <div class="mb-3">
-                            <label for="otpInput" class="form-label">OTP</label>
+                  
                             <div class="input-group">
                               <span class="input-group-text"><i class="fas fa-key"></i></span>
                               <input type="number" class="form-control" id="otpInput" name="otp" required>
-                              <span id="timer" style="display: none;"></span>
                               <input type="hidden" name="mobilenumber" value="<%-mobno%>">
-                              <button type="button" class="btn btn-dark ms-2" id="resendBtn"
-                                onclick="startTimer(60);">Resend</button>
                             </div>
-                            <span class="form-text text-muted" id="timer"></span>
+                           
                           </div>
-                          <div class="d-grid">
-                            <button type="submit" class="btn btn-warning">Register</button>
-                          </div>
+                            <button type="submit" class="btn btn-primary w-50">Register</button>
+                            <br>
+                            
                         </form>
+                        <br>
+                        <span id="timer" style="display: none;"></span>
+                        <a class="fs--1 fw-bold" id="resendBtn" onclick="startTimer(60);">Still having problems?</a>
+                      
+                        <span class="form-text text-muted" id="timer"></span>
                       </div>
             
-                    </div>
-                  </div>
-                </div>
-              </div>
 
 
 
@@ -157,7 +151,7 @@
       var button = document.getElementById("resendBtn");
       timer.style.display = "inline-block";
       button.style.display = "none";
-      var seconds = 60;
+      var seconds = 6;
       timer.innerHTML = seconds + " seconds remaining";
       timerInterval = setInterval(function () {
         seconds--;
