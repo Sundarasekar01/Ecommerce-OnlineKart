@@ -78,7 +78,7 @@
               <% if(typeof message !=='undefined' ){ %>
                 <span class="fs-4">
 
-                  <h6><span style="color: red;">
+                  <h6><span style="color: blue">
                       <%=message %>
                     </span> </h6>
 
@@ -89,38 +89,38 @@
             <form action="/register" method="post" onsubmit="return validate()">
               <div class="mb-3 text-start">
                 <label class="form-label" for="name">Name</label>
-                <input class="form-control" id="name" type="text" name="name" onchange="nameValidate()"
+                <input class="form-control mb-3" id="name" type="text" name="name" onchange="nameValidate()"
                   placeholder="Name" />
-               <h6><span style="color: red;"  id="Name"></span></h6> 
+               <h6><span id="Name"></span></h6> 
               </div>
 
               <div class="mb-3 text-start">
                 <label class="form-label" for="email">Email address</label>
-                <input class="form-control" id="email" name="email" type="email" onchange="emailValidate()"
+                <input class="form-control mb-3" id="email" name="email" type="email" onchange="emailValidate()"
                   placeholder="name@example.com" />
-                <h6><span style="color: red;" id="Email"></span></h6>
+                <h6><span id="Email"></span></h6>
               </div>
 
               <div class="mb-3 text-start">
                 <label class="form-label" for="number">Mobile number</label>
-                <input class="form-control" type="text" id="number" name="mno" onchange="numberValidate()"
+                <input class="form-control mb-3" type="text" id="number" name="mno" onchange="numberValidate()"
                   placeholder="Mobile number" />
-                <h6><span style="color: red;" id="Number"></span></h6>
+                <h6><span id="Number"></span></h6>
               </div>
 
               <div class="row g-3 mb-3">
                 <div class="col-sm-6">
                   <label class="form-label" for="password">Password</label>
-                  <input class="form-control form-icon-input" name="password" id="password" type="password"
+                  <input class="form-control mb-3" name="password" id="password" type="password"
                     onchange="passwordValidate()" placeholder="Password" />
-                  <h6><span style="color: red;" id="Password"></span></h6>
+                  <h6><span  id="Password"></span></h6>
                 </div>
 
                 <div class="col-sm-6">
                   <label class="form-label" for="confirmPassword">Confirm Password</label>
-                  <input class="form-control form-icon-input" name="password2" id="password2" type="password"
+                  <input class="form-control mb-3" name="password2" id="password2" type="password"
                     onchange="passwordValidate2()" placeholder="Confirm Password" />
-                 <h6><span style="color: red;" id="Password2"></span></h6>
+                 <h6><span  id="Password2"></span></h6>
                 </div>
               </div>
 
