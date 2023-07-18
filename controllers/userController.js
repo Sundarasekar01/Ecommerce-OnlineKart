@@ -116,8 +116,8 @@ const verifyLogin = async (req, res) => {
 
             if (passwordMatch) {
                 if (userData.is_verified) {
-                    // newOtp = "1234";
-                    newOtp =  sms.sendMessage(userData.mobile,res)
+                    newOtp = "1234";
+                    // newOtp =  sms.sendMessage(userData.mobile,res)
                     console.log(newOtp);
                     res.render('two-factor', { otp: newOtp, userData: userData });
                 } else {
