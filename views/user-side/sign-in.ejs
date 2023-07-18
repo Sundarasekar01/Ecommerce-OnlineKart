@@ -82,7 +82,7 @@
               <% if(typeof message !=='undefined' ){ %>
                 <span class="fs-4">
                   
-                   <h6><span style="color: blue;"><%=message %></span> </h6>
+                   <h6><span style="color: rgb(255, 0, 0);"><%=message %></span> </h6>
                   
                 </span>
                 <% } %>
@@ -145,7 +145,7 @@
             <div class="col-auto"><a class="fs--1 fw-semi-bold" href="/forgot/forgot-p">Forgot Password?</a></div>
 
 
-          <button class="btn btn-primary w-100 mb-3" type="submit" class="btn" value="Login" onclick="return validate()"
+          <button class="btn btn-primary w-100 mb-3" type="submit" class="btn" value="Login"  onclick="emailValidate(),passwordValidate()"
           >Sign In</button>
 
             <div class="text-center"><a class="fs--1 fw-bold" href="/register" >Create an account</a></div>
@@ -190,7 +190,7 @@
       function passwordValidate() {
         let password = document.getElementById("password").value;
         if (password.length < 8) {
-          document.getElementById("Password").innerHTML = "Please enter your password.";
+          document.getElementById("Password").innerHTML = "Please enter a minimum of 8 characters.";
           return false;
         } else {
           document.getElementById("Password").innerHTML = "";

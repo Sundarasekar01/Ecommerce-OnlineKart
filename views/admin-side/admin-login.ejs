@@ -67,18 +67,19 @@
               <div class="avatar avatar-4xl mb-4"><img class="rounded-circle" src="../../../assets/img/team/30.webp" alt="" /></div>
               <h2 class="text-1000"> <span class="fw-normal">Hello </span>John Smith</h2>
               <p class="text-700">Enter your details to access the admin</p>
-            </div>
-            
-
+              
             <div class="">
               <% if(typeof message !=='undefined' ){ %>
                 <span class="fs-4">
                   
-                   <h6><span style="color:blue;"><%=message %></span> </h6>
+                   <h6><span style="color: rgb(255, 0, 0);"><%=message %></span> </h6>
                   
                 </span>
                 <% } %>
             </div>
+            </div>
+            
+
 
 
 
@@ -100,10 +101,13 @@
                 <h6><span id="Password"></span></h6>
               </div>
               
-                <a class="btn btn-primary w-100" value="Login" type="submit" onclick="return validate()">Sign In</a>
-
+               
+                <button type="submit" class="btn btn-primary w-100" value="Login"
+                onclick="emailValidate(),passwordValidate()">Sign In</button>
              
             </form>
+
+
 
           </div>
         </div>
@@ -138,7 +142,7 @@
       function passwordValidate() {
         let password = document.getElementById("password").value;
         if (password.length < 8) {
-          document.getElementById("Password").innerHTML = "Please enter your password.";
+          document.getElementById("Password").innerHTML = "Please enter a minimum of 8 characters.";
           return false;
         } else {
           document.getElementById("Password").innerHTML = "";

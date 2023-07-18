@@ -78,7 +78,7 @@
               <% if(typeof message !=='undefined' ){ %>
                 <span class="fs-4">
 
-                  <h6><span style="color: blue">
+                  <h6><span style="color: rgb(255, 0, 0);">
                       <%=message %>
                     </span> </h6>
 
@@ -130,7 +130,7 @@
               </div>
 
               <!-- <button class="btn btn-primary w-100 mb-3" type="submit">Sign up</button> -->
-              <button class="btn btn-primary w-100 mb-3" type="submit" onclick="return validate()">Sign up</button>
+              <button class="btn btn-primary w-100 mb-3" type="submit" onclick="nameValidate() , emailValidate() ,numberValidate(), passwordValidate(), passwordValidate2()">Sign up</button>
 
 
               <div class="text-center">
