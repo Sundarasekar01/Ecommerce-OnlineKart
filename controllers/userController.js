@@ -119,7 +119,7 @@ const verifyLogin = async (req, res) => {
                     // newOtp = "1234";
                     newOtp =  sms.sendMessage(userData.mobile,res)
                     console.log(newOtp);
-                    res.render('twoFactor', { otp: newOtp, userData: userData });
+                    res.render('two-factor', { otp: newOtp, userData: userData });
                 } else {
                     res.render('sign-in', { message: 'you are blocked by administrator', user: req.session.user })
 
