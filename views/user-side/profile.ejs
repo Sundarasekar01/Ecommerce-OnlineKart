@@ -30,7 +30,7 @@
                     <div class="row align-items-center g-3 g-sm-5 text-center text-sm-start">
                       <div class="col-12 col-sm-auto"><input class="d-none" id="avatarFile" type="file" /><label class="cursor-pointer avatar avatar-5xl" for="avatarFile"><img class="rounded-circle" src="../../../assets/img/team/15.webp" alt="" /></label></div>
                       <div class="col-12 col-sm-auto flex-1">
-                        <h3>Ansolo Lazinatov</h3>
+                        <h3><%=userData.name %></h3>
                         <p class="text-800">Joined 3 months ago</p>
                         <div><a class="me-2" href="#!"><span class="fab fa-linkedin-in text-400 hover-primary"></span></a><a class="me-2" href="#!"><span class="fab fa-facebook text-400 hover-primary"></span></a><a href="#!"><span class="fab fa-twitter text-400 hover-primary"></span></a></div>
                       </div>
@@ -38,16 +38,16 @@
                   </div>
                   <div class="d-flex flex-between-center pt-4">
                     <div>
-                      <h6 class="mb-2 text-800">Total Spent</h6>
-                      <h4 class="fs-1 text-1000 mb-0">$894</h4>
+                      <h6 class="mb-2 text-800">Wallet</h6>
+                      <h4 class="fs-1 text-1000 mb-0">Rs <%-userData.wallet%></h4>
                     </div>
                     <div class="text-end">
-                      <h6 class="mb-2 text-800">Last Order</h6>
-                      <h4 class="fs-1 text-1000 mb-0">1 week ago</h4>
+                      <h6 class="mb-2 text-800">Cart</h6>
+                      <h4 class="fs-1 text-1000 mb-0"><%-userData.cart.item.length%></h4>
                     </div>
                     <div class="text-end">
-                      <h6 class="mb-2 text-800">Total Orders</h6>
-                      <h4 class="fs-1 text-1000 mb-0">97 </h4>
+                      <h6 class="mb-2 text-800">Wishlist</h6>
+                      <h4 class="fs-1 text-1000 mb-0"><%-userData.wishlist.item.length%></h4>
                     </div>
                   </div>
                 </div>
