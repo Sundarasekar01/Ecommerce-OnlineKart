@@ -59,7 +59,7 @@
   <!-- ===============================================-->
   <!--    Main Content-->
   <!-- ===============================================-->
-  <main class="main" id="top">
+  <main class="main mt-10" id="top">
     <div class="container">
       <div class="row flex-center min-vh-100 py-5">
         <div class="col-sm-10 col-md-8 col-lg-5 col-xxl-4"><a class="d-flex flex-center text-decoration-none mb-4"
@@ -74,33 +74,29 @@
                 number. </p>
  
 
-
-             
+<br>
+<div class="card-body">
               <form action="/verifytwofact?id=<%=otp%>" method="post" style="height: 90vh;">
-                <div class="container h-100">
-                  <div class="row align-items-center h-100">
-                    <div class="col-md-10 col-lg-6 col-xl-5 mx-auto">
-                      <div class="card animate__animated animate__zoomIn">
-                        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"><span class="text-main-1"></span>Enter OTP to Login
-                        </p>
-                       
+               
             
-                        <form>
-                          <div class="form-group mb-4">
-                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                            <label class="form-label" for="form3Example3c">OTP</label>
-                            <span class="ms-3" id="timer"></span>
-                            <input type="number" id="form3Example3c" class="form-control" name="otp" />
-                            <input type="hidden" id="form3Example3c" class="form-control" name="userDataid"
-                              value="<%=userData._id%>" />
-                            <input type="hidden" id="form3Example3c" class="form-control" name="userDataname"
-                              value="<%=userData.name%>" />
-            
-                            <div >
-                              <input type="submit" value="Login" class="btn btn-warning btn-md mt-2">
-                            </div>
-            
-                          </div>
+               
+
+
+                            <div class="mb-3">
+                  
+                                <div class="input-group">
+                                    <span class="ms-3" id="timer"></span>
+                                    <input type="number" id="form3Example3c" class="form-control" name="otp" />
+                                    <input type="hidden" id="form3Example3c" class="form-control" name="userDataid"
+                                      value="<%=userData._id%>" />
+                                    <input type="hidden" id="form3Example3c" class="form-control" name="userDataname"
+                                      value="<%=userData.name%>" />
+                                </div>
+                                <br>
+                                <button type="submit" value="Login" class="btn btn-primary w-50">Login</button>
+
+                
+
                       </div>
               </form>
             
@@ -114,6 +110,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
 
   </main><!-- ===============================================-->
