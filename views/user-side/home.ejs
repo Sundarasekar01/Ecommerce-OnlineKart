@@ -232,36 +232,64 @@ else { %>
 
 
 
-  
 
-  <!-- <section> begin ============================-->
-    <section class="pt-10" id="blog">
-      <div class="container-small px-lg-7 px-xxl-3">
-        <div class="text-center mb-5 mb-8">
-          <h5 class="text-info mb-3">Blogs</h5>
-          <h2 class="mb-2">Our most viewed articles</h2>
+
+
+
+
+
+
+
+
+ <!-- <section> begin ============================-->
+  <section class="bg-white" id="blog">
+    <div class="container-small px-lg-7 px-xxl-3">
+      <div class="row">
+        <div class="col-12 mb-4 text-center text-sm-start">
+          <h4 class="text-primary fw-bolder mb-3">Blog</h4>
+          <h2>Latest articles</h2>
         </div>
-        <div class="row gx-3 gy-7">
-
-
-
-
-          <% for(i=0;i<product.length;i++){ %>
-          <div class="col-lg-4">
-            <div class="blog-card"><a href="/view-details?id=<%=product[i]._id%>"><img class="w-100 rounded-3" src="/uploads/<%=product[i].image[0]%>" alt="error" /></a>
-              <div class="d-flex align-items-cente mt-3"><a class="btn-link text-decoration-none text-800 d-flex align-items-center me-3" href="/view-details?id=<%=product[i]._id%>"><span class="fs--2 ms-1 lh-1">2563</span></a><a class="btn-link text-decoration-none text-800 d-flex align-items-center me-3" href="#!"><span class="fa-solid fa-heart fs--1"></span><span class="ms-1 fs--2 lh-1">125</span></a><a class="btn-link text-decoration-none text-800 d-flex align-items-center" href="#!"><span class="fa-solid fa-comment fs--1"></span><span class="ms-1 fs--2 lh-1">125</span></a></div><span class="badge bg-primary mb-2 mt-4">Rs <%=product[i].price%></span>
-              <h4 class="mb-3 pe-sm-5 lh-lg"><%=product[i].name%></h4><a class="btn-link px-0 d-flex align-items-center fs--1 fw-bold" href="/view-details?id=<%=product[i]._id%>" role="button">See more<span class="fa-solid fa-angle-right ms-2"></span></a>
-            </div>
-          </div>
-
-
-          <%}%>
+        <div class="col-lg-6 text-center text-sm-start">
+          <p>See the latest articles we published with this dashboard. Your customers will be happy to find all the latest posts in one place. This menu efficiently shows all related topics from search filters and provides the customers with what</p>
+        </div>
+        <div class="col-lg-6 text-center text-sm-start">
+          <p>they need. Also you can just educate your customers about everything they need to know and follow to avail a service with you. This menu is the one to show them that.</p>
+        </div>
+      </div>
+      <div class="row h-100 g-3 justify-content-center">
 
 
       
+
+        
+    <% for(i=0;i<product.length-1;i++){ %>
+        <div class="col-sm-6 col-lg-3 mb-3 mb-md-0">
+          <div class="card text-white h-100"><img class="rounded-top h-100 fit-cover" src="/uploads/<%=product[i].image[0]%>" alt="..." />
+            <div class="card-body rounded-top">
+              <div class="d-flex align-items-cente mb-3">
+                <div class="d-flex align-items-center me-3"><a class="btn-link text-decoration-none d-flex align-items-center" href="#!"><span class="fa-solid fa-eye text-500 me-1"></span><span class="text-900 fs--2 lh-1">142</span></a></div>
+                <div class="d-flex align-items-center me-3"><a class="btn-link text-decoration-none d-flex align-items-center" href="#!"><span class="fa-solid fa-heart text-500 me-1"></span><span class="text-900 fs--2 lh-1">123</span></a></div>
+                <div class="d-flex align-items-center"><a class="btn-link text-decoration-none d-flex align-items-center" href="#!"><span class="fa-solid fa-comment text-500 me-1"></span><span class="text-900 fs--2 lh-1">22</span></a></div>
+              </div><span class="badge badge-phoenix badge-phoenix-primary mb-2">Rs <%=product[i].price%></span>
+              <h4 class="fw-bold mb-3 lh-sm line-clamp-2"><%=product[i].name%></h4><a class="btn-link px-0 d-flex align-items-center fs--1 fw-bold" href="/view-details?id=<%=product[i]._id%>" role="button">View Details<span class="fa-solid fa-angle-right ms-2"></span></a>
+            </div>
+          </div>
         </div>
+
+        <%}%>
+
       </div>
-    </section>
+      <div class="text-center mt-6"><a class="btn btn-outline-primary" href="/loadShop">View All<span class="fa-solid fa-angle-right ms-2"></span></a></div>
+    </div><!-- end of .container-->
+  </section><!-- <section> close ============================-->
+  <!-- ============================================-->
+
+
+
+
+
+
+
 
 
 
