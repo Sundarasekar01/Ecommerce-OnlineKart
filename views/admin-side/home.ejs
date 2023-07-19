@@ -36,6 +36,13 @@
 </div>
 <!-- Sale & Revenue End -->
 
+
+
+<input type="hidden" id="pds" value="<%=pds%>">
+<input type="hidden" id="qty" value="<%=qty%>">
+<input type="hidden" id="key1" value="<%=key1%>">
+<input type="hidden" id="key2" value="<%=key2%>">
+
 <hr>
 <!-- Sales Chart Start -->
 <div style="height: 50vh;">
@@ -47,11 +54,14 @@
         <canvas id="myChart2" class="mt-5" style="margin-left: 19%;  width:100%;max-width:700px"></canvas>
     </div>
 
+    <br><br><br><br><br><br><br><br>
+
 </div>
-<input type="hidden" id="pds" value="<%=pds%>">
-<input type="hidden" id="qty" value="<%=qty%>">
-<input type="hidden" id="key1" value="<%=key1%>" />
-<input type="hidden" id="key2" value="<%=key2%>" />
+
+
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>

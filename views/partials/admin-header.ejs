@@ -91,16 +91,16 @@
                             </div>
                             <!-- <div class="mb-3 mx-3"><input class="form-control form-control-sm" id="statusUpdateInput" type="text" placeholder="Update your status" /></div> -->
                           </div>
-                          <!-- <div class="overflow-auto scrollbar" style="height: 10rem;">
+                           <div class="overflow-auto scrollbar" style="height: 5rem;">
                             <ul class="nav d-flex flex-column mb-2 pb-1">
-                              <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="user"></span><span>Profile</span></a></li>
-                              <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-900" data-feather="pie-chart"></span>Dashboard</a></li>
-                              <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="lock"></span>Posts &amp; Activity</a></li>
-                              <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="settings"></span>Settings &amp; Privacy </a></li>
+                              <!-- <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="user"></span><span>Profile</span></a></li> -->
+                              <li class="nav-item"><a class="nav-link px-3" href="/admin/home"><span class="me-2 text-900" data-feather="pie-chart"></span>Dashboard</a></li>
+                              <!-- <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="lock"></span>Posts &amp; Activity</a></li>
+                              <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="settings"></span>Settings &amp; Privacy </a></li> -->
                               <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="help-circle"></span>Help Center</a></li>
-                              <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="globe"></span>Language</a></li>
+                              <!-- <li class="nav-item"><a class="nav-link px-3" href="#!"> <span class="me-2 text-900" data-feather="globe"></span>Language</a></li> -->
                             </ul>
-                          </div> -->
+                          </div> 
                          
                           <div class="card-footer p-0 border-top">
                             <!-- <ul class="nav d-flex flex-column my-3">
@@ -115,13 +115,13 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col-12 col-md-6">
+                <!-- <div class="col-12 col-md-6">
                   <div class="search-box ecommerce-search-box w-100">
                     <form class="position-relative" data-bs-toggle="search" data-bs-display="static"><input class="form-control search-input search form-control-sm" type="search" placeholder="Search" aria-label="Search" />
                       <span class="fas fa-search search-box-icon"></span>
                     </form>
                   </div>
-                </div>
+                </div> -->
               </div>
             </nav>
           </div>
@@ -131,6 +131,13 @@
 
       <nav class="ecommerce-navbar navbar-expand navbar-light bg-white justify-content-between">
         <div class="container-small d-flex flex-between-center" data-navbar="data-navbar">
+
+
+
+
+
+
+            
           <div class="dropdown"><button class="btn text-900 ps-0 pe-5 text-nowrap dropdown-toggle dropdown-caret-none" data-category-btn="data-category-btn" data-bs-toggle="dropdown"><span class="fas fa-bars me-2"></span>Category</button>
             <div class="dropdown-menu border py-0 category-dropdown-menu">
               <div class="card border-0 scrollbar" style="max-height: 657px;">
@@ -210,14 +217,15 @@
             </div>
           </div>
           <ul class="navbar-nav justify-content-end align-items-center">
-            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link ps-0 active" href="../../../apps/e-commerce/landing/homepage.html">Home</a></li>
-            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../apps/e-commerce/landing/favourite-stores.html">My Favorites Stores</a></li>
-            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../apps/e-commerce/landing/products-filter.html">Products</a></li>
-            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../apps/e-commerce/landing/wishlist.html">Wishlist</a></li>
-            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../apps/e-commerce/landing/shipping-info.html">Shipping Info</a></li>
-            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../apps/e-commerce/admin/add-product.html">Be a vendor</a></li>
-            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../apps/e-commerce/landing/order-tracking.html">Track order</a></li>
-            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link pe-0" href="../../../apps/e-commerce/landing/checkout.html">Checkout</a></li>
+            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="/admin/home">Dashboard</a></li>
+            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="/admin/user">Customers</a></li>
+            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="/admin/category">Categories</a></li>
+            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="/admin/product">Our Products</a></li>
+            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="/admin/order">Track order</a></li>
+            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="/admin/loadCoupon">Discount Coupons</a></li>
+            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="/admin/banner">Update Banner</a></li>
+            <!-- <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link" href="../../../apps/e-commerce/landing/order-tracking.html"></a></li>
+            <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link pe-0" href="../../../apps/e-commerce/landing/checkout.html">Checkout</a></li> -->
             <li class="nav-item dropdown" data-nav-item="data-nav-item" data-more-item="data-more-item"><a class="nav-link dropdown-toggle dropdown-caret-none fw-bold pe-0" href="javascript: void(0)" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-boundary="window" data-bs-reference="parent"> More<span class="fas fa-angle-down ms-2"></span></a>
               <div class="dropdown-menu dropdown-menu-end category-list" aria-labelledby="navbarDropdown" data-category-list="data-category-list"></div>
             </li>
