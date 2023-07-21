@@ -31,6 +31,8 @@ const loadVeriftyForgotPassword = async (req, res) => {
     }
 }
 
+
+
 const resendOtp = async (req, res) => {
     try {
         console.log(mobile);
