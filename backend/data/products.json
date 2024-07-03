@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Men's T-shirt",
+        "price": 500,
+        "description": "Comfortable cotton T-shirt",
+        "ratings": 4,
+        "images": [
+            {
+                "image": "mens_tshirt.jpg"
+            }
+        ],
+        "category": "Men",
+        "Brand": "Brand 1",
+        "Size": "Medium",
+        "color": "Blue",
+        "stock": 100,
+        "numofReviews": 25,
+        "reviews": []
+    },
+    {
+        "name": "Women's Saree",
+        "price": 1500,
+        "description": "Elegant silk saree",
+        "ratings": 5,
+        "images": [
+            {
+                "image": "womens_saree.jpg"
+            }
+        ],
+        "category": "Women",
+        "Brand": "Brand 2",
+        "Size": "Large",
+        "color": "Red",
+        "stock": 50,
+        "numofReviews": 30,
+        "reviews": []
+    },
+    {
+        "name": "Kids Watch",
+        "price": 200,
+        "description": "Digital wristwatch for kids",
+        "ratings": 3,
+        "images": [
+            {
+                "image": "kids_watch.jpg"
+            }
+        ],
+        "category": "Kids",
+        "Brand": "Brand 3",
+        "Size": "Small",
+        "color": "Yellow",
+        "stock": 200,
+        "numofReviews": 10,
+        "reviews": []
+    },
+    {
+        "name": "Men's Pants",
+        "price": 700,
+        "description": "Comfortable casual pants",
+        "ratings": 4,
+        "images": [
+            {
+                "image": "mens_pants.jpg"
+            }
+        ],
+        "category": "Men",
+        "Brand": "Brand 1",
+        "Size": "Large",
+        "color": "Black",
+        "stock": 80,
+        "numofReviews": 20,
+        "reviews": []
+    },
+    {
+        "name": "Women's Chudithar",
+        "price": 1200,
+        "description": "Stylish chudithar set",
+        "ratings": 4,
+        "images": [
+            {
+                "image": "womens_chudithar.jpg"
+            }
+        ],
+        "category": "Women",
+        "Brand": "Brand 2",
+        "Size": "Medium",
+        "color": "Green",
+        "stock": 60,
+        "numofReviews": 15,
+        "reviews": []
+    },
+    {
+        "name": "Kids Toy",
+        "price": 300,
+        "description": "Fun and educational toy",
+        "ratings": 5,
+        "images": [
+            {
+                "image": "kids_toy.jpg"
+            }
+        ],
+        "category": "Kids",
+        "Brand": "Brand 3",
+        "Size": "Large",
+        "color": "Multicolor",
+        "stock": 150,
+        "numofReviews": 40,
+        "reviews": []
+    },
+    {
+        "name": "Men's Formal Pants",
+        "price": 900,
+        "description": "Elegant formal pants",
+        "ratings": 4,
+        "images": [
+            {
+                "image": "mens_formal_pants.jpg"
+            }
+        ],
+        "category": "Men",
+        "Brand": "Brand 1",
+        "Size": "Medium",
+        "color": "Gray",
+        "stock": 70,
+        "numofReviews": 10,
+        "reviews": []
+    },
+    {
+        "name": "Women's Designer Saree",
+        "price": 2500,
+        "description": "Designer saree with intricate work",
+        "ratings": 5,
+        "images": [
+            {
+                "image": "womens_designer_saree.jpg"
+            }
+        ],
+        "category": "Women",
+        "Brand": "Brand 2",
+        "Size": "Extra large",
+        "color": "Blue",
+        "stock": 30,
+        "numofReviews": 20,
+        "reviews": []
+    },
+    {
+        "name": "Kids Educational Watch",
+        "price": 350,
+        "description": "Educational digital watch",
+        "ratings": 4,
+        "images": [
+            {
+                "image": "kids_educational_watch.jpg"
+            }
+        ],
+        "category": "Kids",
+        "Brand": "Brand 3",
+        "Size": "Small",
+        "color": "Pink",
+        "stock": 90,
+        "numofReviews": 12,
+        "reviews": []
+    },
+    {
+        "name": "Men's Sports T-shirt",
+        "price": 600,
+        "description": "Breathable sports t-shirt",
+        "ratings": 5,
+        "images": [
+            {
+                "image": "mens_sports_tshirt.jpg"
+            }
+        ],
+        "category": "Men",
+        "Brand": "Brand 1",
+        "Size": "Small",
+        "color": "White",
+        "stock": 110,
+        "numofReviews": 22,
+        "reviews": []
+    }
+]
