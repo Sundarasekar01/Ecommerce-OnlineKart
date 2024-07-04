@@ -4,8 +4,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./backend/server.js",
-    "dev": "set NODE_ENV=development && nodemon ./backend/server.js",
-    "pro": "set NODE_ENV=production && nodemon ./backend/server.js",
+    "dev": "set NODE_ENV=development&&nodemon ./backend/server.js",
+    "pro": "set NODE_ENV=production&&nodemon ./backend/server.js",
     "feed": "node backend/utils/feeder.js "
   },
   "author": "",
