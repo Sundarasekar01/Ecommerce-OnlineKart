@@ -1,29 +1,24 @@
-const products = require('../data/products.json');  
-const Product = require('../models/productModel');
-const dotenv = require('dotenv');
-const connectDatabase = require('../config/database');
+const products = require("../data/products.json");
+const Product = require("../models/productModel");
+const dotenv = require("dotenv");
+const connectDatabase = require("../config/database");
 
-dotenv.config({path:'backend/config/config.env'})
+dotenv.config({ path: "backend/config/config.env" });
 
 connectDatabase();
 
-const feedProduct = async ()=>{
+const feedProduct = async () => {
+  try {
+    await Product.deleteMany();
+    console.log("Products deleted");
 
-    try{
+    await Product.insertMany(products);
+    console.log("All products added ");
+  } catch (error) {
+    console.log(error.message);
+  }
 
-        await Product.deleteMany();
-        console.log('Products deleted')
-
-        await Product.insertMany(products);
-        console.log('All products added ')
-
-    }catch(error){
-         
-        console.log(error.message)
-     
-    }
-
-    process.exit()
-}
+  process.exit();
+};
 
 feedProduct();

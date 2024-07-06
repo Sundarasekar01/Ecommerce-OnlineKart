@@ -1,127 +1,110 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "Please enter the product name"],
+    trim: true,
+    maxlength: [50, "Product name does not exceed 50 characters"],
+  },
 
-    name: {
-        type: String,
-        required: [true, "Please enter the product name"],
-        trim: true,
-        maxlength: [50, "Product name does not exceed 50 characters"]
-    },
+  price: {
+    type: Number,
+    required: [true, "Please enter product price"],
+  },
 
-    price: {
-        type: Number,
-        required: [true, "Please enter product price"]
-    },
+  description: {
+    type: String,
+    required: [true, "Please enter product description"],
+  },
 
-    description: {
-        type: String,
-        required: [true, "Please enter product description"]
-    },
- 
-    ratings: {
-        type: String,
-        default: 1
-    },
+  ratings: {
+    type: String,
+    default: 1,
+  },
 
-    images: [
-        {
-            image: {
-                type: String,
-                required: true
-            }
-        }
-    ],
-
-    category:{
+  images: [
+    {
+      image: {
         type: String,
         required: true,
-        enum: {
-            values:[
-                'Men',
-                'Women',
-                'Kids'
-            ]
-        }
-    }, 
+      },
+    },
+  ],
 
-    Brand:{
+  category: {
+    type: String,
+    required: true,
+    enum: {
+      values: ["Men", "Women", "Kids"],
+    },
+  },
+
+  Brand: {
+    type: String,
+    required: true,
+    enum: {
+      values: ["Brand 1", "Brand 2", "Brand 3"],
+    },
+  },
+
+  Size: {
+    type: String,
+    required: true,
+    enum: {
+      values: ["Small", "Medium", "Large", "Extra large"],
+    },
+  },
+
+  color: {
+    type: String,
+    required: true,
+    enum: {
+      values: [
+        "Black",
+        "White",
+        "Blue",
+        "Gray",
+        "Pink",
+        "Yellow",
+        "Green",
+        "Red",
+      ],
+    },
+  },
+
+  stock: {
+    type: Number,
+    default: 0,
+  },
+
+  numofReviews: {
+    type: Number,
+    default: 0,
+  },
+
+  reviews: [
+    {
+      name: {
         type: String,
         required: true,
-        enum: {
-            values:[
-                'Brand 1',
-                'Brand 2',
-                'Brand 3'
-            ]
-        }
-    }, 
-
-    Size:{
+      },
+      rating: {
         type: String,
         required: true,
-        enum: {
-            values:[
-                'Small',
-                'Medium',
-                'Large',
-                'Extra large'
-            ]
-        }
-    }, 
-
-    color:{
+      },
+      comment: {
         type: String,
         required: true,
-        enum: {
-            values:[
-                'Black',
-                'White',
-                'Blue',
-                'Gray',
-                'Pink',
-                'Yellow',
-                'Green',
-                'Red'
-            ]
-        }
-    }, 
-
-    stock: {
-        type: Number,
-        default: 0
+      },
     },
+  ],
 
-    numofReviews: {
-        type: Number,
-        default: 0
-    },
+  createdAt: {
+    type: Date,
+  },
+});
 
-    reviews:[
-        {
-            name: {
-                type: String,
-                required: true
-            },
-            rating: {
-                type: String,
-                required: true
-            },
-            comment :{
-                type: String,
-                required: true
-            }
-        }
-    ],
-
-    createdAt: {
-        type: Date,
-    },
-
-
-})
-
-
-let Schema = mongoose.model('Product',productSchema);
+let Schema = mongoose.model("Product", productSchema);
 
 module.exports = Schema;
